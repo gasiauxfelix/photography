@@ -14,38 +14,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,400italic">
 
 <!-- this is just so my stupid fish can spin as a favicon --><script>
-    // We create an array of emojis or text (or image URLs if you had them)
-    // Since breaking a GIF into images is hard, here is a spinning fish emoji workaround!
-    const frames = ["🐟", "🐠", "🐡", "🐠"];
-    let step = 0;
-
-    function animateFavicon() {
-        const canvas = document.createElement('canvas');
-        canvas.width = 32;
-        canvas.height = 32;
-        const ctx = canvas.getContext('2d');
-        
-        ctx.font = '24px serif';
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
-        ctx.fillText(frames[step], 16, 16);
-
-        let link = document.getElementById('dynamic-favicon');
-        if (!link) {
-            link = document.createElement('link');
-            link.id = 'dynamic-favicon';
-            link.rel = 'icon';
-            document.head.appendChild(link);
-        }
-        
-        link.href = canvas.toDataURL('image/png');
-        step = (step + 1) % frames.length;
-    }
-
-    // Change frame every 250 milliseconds
-    setInterval(animateFavicon, 250);
-</script>
-
+  <link rel="icon" type="image/png" href="{{ site.baseurl }}/assets/hedgehog.png">
 
 
 {% if site.google_analytics %}
